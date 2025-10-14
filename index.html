@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q&A Copy Text</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .main-title {
+        text-align: center;
+        color: white;
+      }
+
+      .qa-container {
+        max-width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .qa-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s;
+      }
+
+      .qa-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .question {
+        font-size: 20px;
+        font-weight: 600;
+        color: #2d3748;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      .answer-section {
+        position: relative;
+      }
+
+      .answer-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #718096;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .answer-box {
+        max-height: 40px;
+        overflow-y: scroll;
+        background: #f7fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 16px;
+        padding-right: 80px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #2d3748;
+        position: relative;
+        transition: border-color 0.3s;
+      }
+
+      .answer-box:hover {
+        border-color: #cbd5e0;
+      }
+
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 6px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .copy-btn:hover {
+        background: #5568d3;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      }
+
+      .copy-btn:active {
+        transform: translateY(0);
+      }
+
+      .copy-btn.copied {
+        background: #48bb78;
+      }
+
+      .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #48bb78;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s;
+        pointer-events: none;
+        z-index: 1000;
+      }
+
+      .notification.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">LSA practicals</h1>
+
+    <div class="qa-container">
+      <div class="qa-card">
+        <div class="question">
+          To study the installation of Red Hat Enterprise Linux.
+        </div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+STEPS:
+Step 1: Boot from Installation Media
+Insert the RHEL DVD/USB into the system.
+Restart the computer.
+Enter the BIOS/UEFI settings (usually by pressing F2, F10, or Del).
+Set the DVD/USB drive as the first boot device.
+Save changes and reboot.
+The system will display the Red Hat Enterprise Linux boot menu.
+
+Step 2: Start Installation
+From the boot menu, select "Install Red Hat Enterprise Linux" and press Enter.
+The installer will load and display the Welcome screen.
+
+Step 3: Select Language
+Choose your preferred language and keyboard layout.
+Click Continue.
+
+Step 4: Installation Summary Screen
+This screen allows you to configure several options:
+Date & Time – Set your region and time zone.
+Keyboard – Confirm or change keyboard layout.
+Language Support – Choose any additional languages if needed.
+Installation Source – Usually detected automatically from the DVD/USB.
+Software Selection – Choose:
+Server with GUI, Minimal Install, or Workstation, depending on your use.
+Installation Destination – Select your hard drive and choose Automatic partitioning (or manual if you want custom partitions).
+Network & Hostname – Turn on network connection and set hostname if required.
+Once all items show as “Done”, click Begin Installation.
+
+Step 5: Set Root Password and Create User
+Click Root Password and set a strong password for the root (administrator) account.
+Optionally, create a regular user account.
+
+Step 6: Installation Process
+The installer will copy and install packages.
+Wait until the process completes (takes about 10–30 minutes depending on system speed).
+
+Step 7: Reboot System
+After installation finishes, click Reboot.
+Remove the installation media (DVD/USB) when prompted.
+
+Step 8: First Boot Configuration
+Accept the License Agreement.
+Register the system (optional if you have a Red Hat subscription).
+Login with your root or user account.
+The RHEL desktop or command-line interface will appear.
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="question">The Command line Interface</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+1. cd: cd command for the change directory it is an case sensitive.
+2. touch: The touch command is the easiest way to create new, empty files, it is also
+used to change the timestamps.
+3. ls: The ls command is command line utility for listing the contents of a directory or
+directories given to it via standard input, it writes results to standard output.
+4. mkdir: The mkdir command in UNIX allow user to create directory or folders as they
+are referred to in same operating system.
+5. cat: The cat command is one of the most frequently used command in linux, like
+operating system. Cat command allows to create single of multiple file
+6. rmdir: This is important because once deleted, it is extremely difficult or impossible
+to recover detected data on UNIX operating system.
+7. rm: It is used to delete files from a file system. By default, it does not remove
+directories.
+8.	cp: cp command in linux which is stands for copy this command is used to copy files or group or
+ files or group of files or directory.
+9.	mv: The mv command is a command line utility that moves file or directories from one place to another.
+10.	pwd: pwd command (Present working dircetory) writes the full path name of the current working directory to the standard output.
+11.	chmod: The command name chmod stands for the [change mode] and it is used to define the way of file can be.
+12.	chown: The chown command in Linux is used to change the ownership of file or directory.
+13.	cal: Calender on linux command line. Sometimes it shows that it may the excellent of convenient
+ command line tools are forgotten when they are replaced by graphical tools.
+14.	bc (The Calculator): It is used for a command line calculator which is similar to basic calculator, by using which we can do basic 
+mathematical calculations. When you invoke bc wiithout arguments, the cursor keeps on blinking and nothing seems to happen key in the
+following arithmetic and then use [ctrl + d] to quit bc.
+15.	date: date command is also used to set the date & time of the system, by default the 
+date command displays the date in the time zone on which UNIX.
+date + %m: It shows the current month in number.
+date + %M: It shows the minute‘s.
+date + %h: It shows the month.
+date + “%h %m”: It shows a month in number also.
+date + %d: It shows date.
+date + %y: It shows current year. date + %D: It shows full date. date + %T: It shows current time.
+15.	head: Command is used for reads the first ten lines of any text given to it as an input and write them to standard output.
+16.	tail: The tail command line utility for outputting the last ten lines given to it as input and write them to standard output.
+17.	tac: tac command is partially the reverse version of cat command (also spelled backward)
+ls*: This command is used for listing all contents of a directory.
+ls [abc]*: This command is used for showing all the directories that start from the a,b,c letters.
+ls /etc/*.a*: This command is used for the directory which can end with ‗a‘ or after ‗a‘ anything word or before (.) also.
+ls -d: It can be used for displaying all the directories.
+18.	history: This command is used for showing all the recent / last commands that have been 1000 commands of any user are rembered.
+
+Piping:
+ps aux | less: This command provides a list of all the proccess that are currently running on your computer the ten option shows output as ten so that you can browse it page by page
+ps aux | grep crond: This command is used to detect only the lines that contains the text crond.
+Redirection:
+ps aux > ~ / ps output.text: This command is used to detect only the lines that contains the text crond.
+cat ~/output.txt: This command is used for viewing the output file of the above command
+i.e. ps aux > ~/output.txt
+
+
+Two types of permissions:
+a)	Absolute permissions: Use numbers to represent file permission (the method most commonly used 
+to set permissions) when you change permission by using the absolute mode to represent permission for each triooke by Oral number
+Category	Permissions
+u (user)	r (read)
+g (group)	w (write)
+o (other)	x (execute)
+
+
+
+b)	Relative permission: Use a combination of letters of symbolic to add or remove permissions.
+Octal	Permissions  Significance
+        U.G.O	                
+    0	– – –	    No permission
+    1	– – x	    Execute only
+    2	– w –	    Write only
+    3	– w x	    Write and Execute
+    4	r – –	    Read only
+    5	r – x	    Read and Execute
+    6	r w –	    Read and Write
+    7	r w x	    All Permissions
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="question">Creating users and groups:</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+cd /
+# Step 1: Create user1 and set password
+useradd user1
+passwd user1
+
+# Step 2: Create user2 and set password
+useradd user2
+passwd user2
+
+# Step 3: Create groups 'sales' and 'account'
+groupadd sales
+groupadd account
+
+# Step 4: Check current group info for user1
+id user1
+
+# Step 5: Add user1 to secondary group 'sales' and verify
+usermod -aG sales user1
+id user1
+
+# Step 6: Repeat for user2
+id user2
+usermod -aG sales user2
+id user2
+
+# Step 7: Add both users to group 'account' and verify
+usermod -aG account user1
+usermod -aG account user2
+id user1
+id user2
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Setting Permissions and Testing User Access</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+cd /
+
+# Step 1: Create nested directories
+mkdir -p /data/sales/data/account
+
+# Step 2: Change ownership of directories
+chown user1:sales /data/sales
+chown user1:account /data/account
+
+# Step 3: Set permissions
+# Owner & group can read/write/execute, others denied
+chmod 770 /data/sales
+chmod 770 /data/account
+
+# Step 4: Switch to user2 and create a file in /data/account
+su - user2
+cd /data/account
+touch emptyfile_account.txt
+
+# Step 5: As user2, try creating a file in /data/sales
+cd /data/sales
+touch emptyfile_sales.txt
+# Note: Should fail if permissions correctly set to 770
+
+# Step 6: Check /etc/passwd to verify users
+vi /etc/passwd
+# Look for user1 and user2 entries with their UID and GID
+
+# Step 7: Check /etc/group to verify groups and membership
+vi /etc/group
+# Look for groups sales & account and associated users
+
+# Step 8: Open a new terminal and verify directory structure
+ls /data
+cd /data
+ls
+ls -l
+# Should display directories and their permissions
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">A.Working with Console</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+cd ~
+ls /etc/security/console.apps
+su
+vi /etc/pam.d/reboot
+# add  :  auth requisite pam_deny.so
+
+#gaining privileges
+cd ~
+yum update
+sudo yum update
+su root
+vi /etc/sudoers
+#add :  student ALL=(ALL) ALL
+sudo yum update
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+
+      <div class="qa-card">
+        <div class="question">
+          RPM (Red Hat Package Manager) and YUM (Yellowdog Updater Modified)
+        </div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+cd ~
+sudo yum install wget
+wget https://dlcdn.apache.org//directory/apacheds/dist/2.0.0.AM27/apacheds-2.0.0.AM27-x86_64.rpm
+
+
+yum install mysql
+yum install nmap
+yum remove nmap
+vi /etc/yum.conf               # Edit YUM global configuration
+vi /etc/yum.repos.d/base.repo  # Check repo variable usage
+yum repolist all               # Verify repositories
+yum clean all                  # Clear cache
+yum update                     # Update system
+yum reinstall package_name     # Reinstall a package
+yum check-update               # Check for available updates 
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Working with networking</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Display the IP address of your system
+ip address show
+# or simply
+ip addr
+# → Shows network interfaces (eth0, eth1, lo) and assigned IP addresses.
+
+# Step 2: Display the routing table (default gateway and routes)
+ip route
+# → Shows how packets are routed, including the default gateway.
+
+# Step 3: View the DNS configuration file
+cat /etc/resolv.conf
+# → Displays the DNS servers your system is using to resolve domain names.
+# Example output:
+# nameserver 192.168.1.1
+
+# Step 4: Add a new IP address to a specific network interface (temporary)
+ip addr add 192.168.1.20/24 dev eth1
+# → Assigns IP 192.168.1.20 to the eth1 interface.
+# (This change lasts until reboot.)
+
+# Step 5: Edit the network configuration file for eth0
+vi /etc/sysconfig/network-scripts/ifcfg-Auto-eth0
+# Example content:
+DEVICE=eth0
+BOOTPROTO=static
+IPADDR=192.168.1.10
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+DNS1=8.8.8.8
+ONBOOT=yes
+# Save and restart network:
+service network restart
+
+# Step 6: Query which DNS server is authoritative for a domain
+# (You can use dig or nslookup)
+dig www.sanderbanbugt.com
+# or
+nslookup -type=ns www.sanderbanbugt.com
+# → Shows the authoritative name server (NS record) for the domain.
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">
+          C. enabling Configuring and infrastructure services
+        </div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+runlevel
+yum install system-config-services
+
+#GUI : System -> Administration -> Services
+
+#CLI : chkconfig --list
+service --status-all
+service sshd start
+service sshd stop
+service sshd restart
+chkconfig sshd on
+chkconfig sshd off
+chkconfig --list sshd
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">D. Configuring OpenSSH</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Check if SSH client is installed
+rpm -q openssh-clients
+# → If installed, will show version number
+# → If not installed, output: package openssh-clients is not installed
+
+# Step 2: Check if SSH server is installed
+rpm -q openssh-server
+# → If installed, will show version number
+# → If not installed, output: package openssh-server is not installed
+
+# Step 3: Install SSH client (if not installed)
+yum install -y openssh-clients
+
+# Step 4: Install SSH server (if not installed)
+yum install -y openssh-server
+
+# Step 5: Start SSH server
+service sshd start
+
+# Step 6: Enable SSH server at boot
+chkconfig sshd on
+
+# Step 7: Check SSH server status
+service sshd status
+# → Shows if sshd is running
+
+# Step 4: Create a new user 'lsa-it' and set password
+useradd lsa-it
+passwd lsa-it
+# → You will be prompted to enter and confirm the password
+
+# Step 5: Open SSH server configuration file
+vi /etc/ssh/sshd_config
+
+#add : #AllowUsers lsa-it
+
+service sshd restart
+
+Open Command Prompt (cmd) on Windows.
+ssh lsa-it@<IP_address_of_Linux_server>
+exit
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">
+        NFS(Network File System) Server Configuration
+        </div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+                Login as root user on both server and client machines.
+Perform on server:
+# Step 1: Login as root
+su -
+
+# Step 2: Verify IP address
+ifconfig
+# or
+ip addr show
+
+# Step 3: Install NFS utilities
+yum install -y nfs-utils
+
+# Step 4: Create directories and files to export
+mkdir /linux /lsa
+touch /linux/abc.txt /linux/xyz.txt
+touch /lsa/lmn.txt /lsa/pqr.txt
+
+# Step 5: Verify directories and files
+ls -l /linux
+ls -l /lsa
+
+# Step 6: Set permissions for directories
+chmod 755 /linux
+chmod 755 /lsa
+
+# Step 7: Configure NFS exports
+vi /etc/exports
+# Add the following lines:
+# /linux   *(ro,sync)         # Read-only export
+# /lsa     *(rw,sync,root_squash)  # Read-write, root squash
+
+# Step 8: Restart required services
+service rpcbind restart
+service nfs restart
+
+# Step 9: Stop firewall (if required)
+service iptables stop
+# or for firewalld: systemctl stop firewalld
+
+Perform on client:
+# Step 1: Login as root
+su -
+
+# Step 2: Verify IP address
+ifconfig
+# or
+ip addr show
+
+# Step 3: Install NFS utilities
+yum install -y nfs-utils
+
+# Step 4: Show exported directories from server
+showmount -e <server_IP>
+# Example: showmount -e 172.16.20.120
+
+# Step 5: Create local mount directories
+mkdir /tyit /syit
+
+# Step 6: Mount NFS exported directories
+mount -t nfs <server_IP>:/linux /tyit
+mount -t nfs <server_IP>:/lsa /syit
+
+# Step 7: Verify content
+ls -l /tyit   # Shows abc.txt, xyz.txt
+ls -l /syit   # Shows lmn.txt, pqr.txt
+
+# Step 8: Test permissions
+touch /tyit/testfile.txt   # Should fail (read-only)
+touch /syit/uvw.txt        # Should succeed (read-write)
+
+
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">FTP Server Configuration</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+Perform on server:
+# Step 1: Login as root
+su -
+
+# Step 2: Verify server IP address
+ifconfig
+# or
+ip addr show
+
+# Step 3: Install FTP server
+yum install -y vsftpd*
+
+# Step 4: Configure FTP server
+vi /etc/vsftpd/vsftpd.conf
+
+# Make the following changes:
+anonymous_enable=NO       # Disable anonymous login
+local_enable=YES          # Allow local users to log in
+xferlog_file=/var/log/vsftpd.log
+listen=YES
+userlist_enable=YES
+
+# Save and exit vi
+# Press ESC then type :wq
+
+# Step 5: Create FTP user
+useradd user2
+passwd user2        # Assign password for user2
+
+# Step 6: Change directory to user2 home
+cd /home/user2
+
+# Step 7: Create empty files and set permissions
+touch file1.txt file2.txt file3.txt file4.txt
+chmod 644 file*.txt
+
+# Step 8: Start FTP service
+service vsftpd start
+chkconfig vsftpd on   # Enable FTP service at boot
+
+
+perform on client:
+# Step 1: Login as root
+su -
+
+# Step 2: Verify IP address
+ifconfig
+# or
+ip addr show
+
+# Step 3: Ping server to check connectivity
+ping <server_IP>
+
+# Step 4: Install FTP client
+yum install -y ftp
+
+# Step 5: Create local directory for FTP demo
+mkdir ftpdemo
+cd ftpdemo
+
+# Step 6: Check present working directory
+pwd
+
+# Step 7: Create 3 empty files
+touch demo1.txt demo2.txt demo3.txt
+
+# Step 8: Stop firewall (if necessary for FTP testing)
+service iptables stop
+# or systemctl stop firewalld
+
+# Step 9: Connect to FTP server
+ftp <server_IP>
+# Enter username: user2
+# Enter password: <user2 password>
+
+# Step 10: List files on server
+ls
+
+# Step 11: Download file from server
+get file1.txt
+
+# Step 12: Upload file from client to server
+put demo1.txt
+
+# Step 13: End FTP session
+bye
+
+# Step 14: Verify changes locally
+ls
+
+verify on server:
+# Step 1: Change to user2 home directory
+cd /home/user2
+
+# Step 2: List files uploaded by client
+ls -l
+# → You should see demo1.txt uploaded from client
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configuring DHCP Server</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+Perform on server:
+# Step 1: Login as root and check IP address
+su -
+ifconfig
+# or
+ip addr show
+
+# Step 2: Change the hostname of the server
+# Edit network configuration
+vi /etc/sysconfig/network
+# Modify or add the line:
+HOSTNAME=server.viva.edu
+# Save and exit (:wq)
+
+# Edit hosts file
+vi /etc/hosts
+# Add the following line:
+172.16.20.120 server.viva.edu
+# Save and exit
+
+# Verify hostname
+hostname
+# → Should display: server.viva.edu
+
+# Step 3: Install DHCP server packages
+yum install -y dhcp*
+
+# Step 4: Edit DHCP configuration file
+vi /etc/dhcp/dhcpd.conf
+# Initially empty
+
+# Step 5: Copy sample configuration
+cp /usr/share/doc/dhcp-4.1.1/dhcpd.conf.sample /etc/dhcp/dhcpd.conf
+# Confirm overwrite with 'yes' if prompted
+
+# Step 6: Edit configuration file
+vi /etc/dhcp/dhcpd.conf
+
+# Add/modify the following:
+option domain-name "viva.edu";
+option domain-name-servers server.viva.edu;
+authoritative;
+
+# Comment the existing subnet lines (add #)
+#subnet ...
+
+subnet 172.16.0.0 netmask 255.255.0.0 {
+    range 172.16.20.40 172.16.21.60;
+    #option routers ...
+}
+
+# Save and exit (:wq)
+
+# Step 7: Start DHCP service
+service dhcpd start
+service dhcpd restart
+chkconfig dhcpd on    # Enable at boot
+
+# Step 8: Stop firewall (optional for testing)
+service iptables stop
+# or for firewalld: systemctl stop firewalld
+
+
+perform on client:
+# Step 9: Login as root
+su -
+
+# Step 10: Check IP address
+ifconfig
+# or
+ip addr show
+
+# Step 11: Verify IP assignment
+# → IP should be assigned from DHCP server range (172.16.20.40 - 172.16.21.60)
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configure Apache Web Server</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Ping server to check connectivity (optional if local)
+ping <server_IP>
+
+# Step 2: Check Apache configuration directory
+cd /etc/httpd/
+ls -l
+# → Look for conf.d directory
+
+# Step 3: Change to web root directory and create index.html
+cd /var/www/html
+
+# Create index.html using vi
+vi index.html
+
+# Add the following content:
+<html>
+<head>
+<title>My page</title>
+</head>
+<body>
+<h1>This is apache server</h1>
+</body>
+</html>
+
+# Save and exit (:wq)
+
+# Step 4: Start Apache service
+service httpd start
+chkconfig httpd on   # Enable Apache at boot
+
+# Step 5: Open web browser and test
+# Type in URL:
+http://localhost
+# → The page should display: "This is apache server"
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configuring Mail Server</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 0: Change hostname (if not already done)
+vi /etc/sysconfig/network
+# Modify or add the line:
+HOSTNAME=server.viva.edu
+# Save and exit (:wq)
+
+vi /etc/hosts
+# Add the line:
+172.16.20.120 server.viva.edu
+# Save and exit (:wq)
+
+# Verify hostname
+hostname
+# → Should display: server.viva.edu
+
+# Step 1: Login as root
+su -
+
+# Step 2: Verify IP address and hostname
+ifconfig
+hostname
+
+# Step 3: Install Postfix mail server
+yum install -y postfix
+
+# Step 4: Edit Postfix main configuration
+vi /etc/postfix/main.cf
+
+# Modify/add the following lines:
+myhostname = server.viva.edu
+mydomain = viva.edu
+myorigin = $mydomain
+mydestination = $myhostname, localhost.$mydomain, localhost
+mynetworks = 172.16.0.0/16
+
+# Save and exit (:wq)
+
+# Step 5: Start and enable Postfix service
+service postfix start
+chkconfig postfix on
+
+# Step 6: Send mail from root to user2
+mail user2@server.viva.edu
+# → Enter subject
+# → Enter mail content
+# Press Ctrl+D to send
+
+# Step 7: Login as user2 to check mail
+su - user2
+mail
+# → List of mails
+# Press Enter to read mail
+
+# Step 8: Send mail from user2 to root
+mail root
+# → Enter subject and content
+# Press Ctrl+D to send
+
+# Step 9: Login as root and check mail
+mail
+# → You should see mail from user2
+</pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configuring System Monitoring tool</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Open terminal and escalate to root
+su -
+
+# Step 2: Start four dd processes running in background
+dd if=/dev/zero of=/dev/null &
+dd if=/dev/zero of=/dev/null &
+dd if=/dev/zero of=/dev/null &
+dd if=/dev/zero of=/dev/null &
+
+# Step 3: Start top to monitor processes
+top
+# → Look for the four dd commands at the top
+# Columns of interest:
+# PR  → Process priority
+# NI  → Niceness (default = 0)
+# TIME → CPU usage
+
+# Step 4: Renice one of the dd processes from within top
+# Press 'r'
+# Enter PID of one dd process (e.g., 3309)
+# Enter new niceness value: 5
+# → This lowers its priority; it receives less CPU time
+
+# Step 5: Renice another dd process to higher priority
+# Press 'r' again
+# Enter PID of another dd process
+# Enter niceness value: -15
+# → This process now consumes more CPU resources
+
+# Step 6: Observe CPU time distribution in top
+# → The process with -15 niceness consumes most CPU
+# → The process with 5 niceness consumes less CPU
+
+# Step 7: Stop the dd processes from top
+# Press 'k'
+# Enter PID of processes you want to kill
+# Confirm by pressing Enter
+
+iii. free command 
+To check used and free memory in kb and mb
+iv. lsblk 
+To check list of available block devices in tree structure and ordinary structure. 
+v. blkid 
+To display information about available block devices.
+vi. findmnt
+To display currently mounted file system 
+vii. df
+To display detailed report on system’s disk space usage.
+viii. du
+To display amount of space that is being used by files in a directory. 
+ix. lspci
+To display information about PCI buses and devices attached to them.
+x. lsusb
+To display information about USB buses and devices attached to them
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configuring rsyslog</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Login as root
+su -
+
+# Step 2: Open rsyslog configuration file
+vi /etc/rsyslog.conf
+
+# Step 3: Add the following line below:
+# *.info;mail.none;authpriv.none;cron.none
+Local1.info /var/log/VIVA
+
+# Save and exit (:wq)
+
+# Step 4: Restart rsyslog service to apply changes
+service rsyslog restart
+# or
+systemctl restart rsyslog
+
+# Step 5: Test logging with the logger command
+logger -p local1.warn "Test Message to check"
+
+# Step 6: Check messages in default system log
+tail -f /var/log/messages
+
+# Step 7: Check messages in the custom log file
+tail -f /var/log/VIVA
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configuring cron</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Open terminal with normal user account
+# (Do not use root unless necessary)
+
+# Step 2: Open crontab editor
+crontab -e
+
+# Step 3: Add the following line to send an email every 5 minutes
+*/5 * * * * mail -s "hello root" root < /path/to/message.txt
+# Note: Replace /path/to/message.txt with a file containing the message body
+# If you want to send an inline message, you can use echo:
+# */5 * * * * echo "This is a test message" | mail -s "hello root" root
+
+# Step 4: Save and exit crontab editor
+# In vi: Press ESC and type :wq!
+
+# Step 5: Wait five minutes, then check mail as root
+su -
+mail
+# → You should see a message with subject "hello root"
+# Press q to quit mail interface
+
+# Step 6: Delete the current crontab for the user (cleanup)
+crontab -r
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configuring Anacron</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Login as root
+su -
+
+# Step 2: Open anacron configuration file
+vi /etc/anacrontab
+
+# Step 3: Add the following lines at the end of the file
+# Format: period in days | delay in minutes | job-identifier | command
+1      5     backup      tar czhfv /tmp.tar /tmp
+1      5     dailyjob    pwd >> ~/cronoutput
+1      5     dailyjob    ps aux | grep crond >> ~/ps.txt
+
+# Save and exit (:wq)
+
+# Step 4: Restart crond service to apply changes
+service crond restart
+# or
+systemctl restart crond
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configuring At</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Start the atd service
+service atd start
+# or
+systemctl start atd
+
+# Step 2: Check the status and restart if needed
+service atd status
+service atd restart
+# or
+systemctl status atd
+systemctl restart atd
+
+# Step 3: Schedule a one-time job using at
+# Example: run a command at 3:30 PM today
+at 15:30
+
+# Step 4: At the at> prompt, enter the commands to execute
+# Example:
+ls /var/www/html
+echo "This is a test" > /tmp/testfile.txt
+
+# Step 5: Close the at prompt with Ctrl+D
+# → Job is now scheduled
+
+# Step 6: Check pending jobs
+atq
+# → Lists scheduled jobs with job ID, date, and user
+
+# Step 7: Wait until job runs and verify output
+# Example:
+ls /tmp
+cat /tmp/testfile.txt
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Configuring batch</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Start the batch command interface
+batch
+
+# Step 2: At the batch> prompt, enter the commands to execute
+# Example:
+ls /var/www/html
+echo "Batch job executed" > /tmp/batchfile.txt
+
+# Step 3: Close the batch prompt with Ctrl+D
+# → Job is now scheduled to run when system load is low
+
+# Step 4: Check pending jobs using atq
+atq
+# → Lists scheduled jobs with job ID, date, and user
+
+# Step 5: Verify the executed commands
+ls /tmp
+cat /tmp/batchfile.txt
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Securing Server with iptables</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Display current iptables configuration
+iptables -L -v
+
+# Step 2: Set default policies to ACCEPT temporarily and flush rules
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -F
+
+# Step 3: Verify that policies are set and chains are flushed
+iptables -L -v
+
+# Step 4: Test network connectivity
+ping <destination_ip>
+
+# Step 5: Set default policy to DROP for all chains
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+
+# Step 6: Open loopback interface and allow essential ports (SSH, PTP)
+# Allow loopback
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
+
+# Allow SSH (port 22) and PTP (port 319/320)
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT
+iptables -A INPUT -p udp --dport 319:320 -j ACCEPT
+iptables -A OUTPUT -p udp --sport 319:320 -j ACCEPT
+
+# Step 7: Save current configuration
+service iptables save
+# or
+iptables-save > /etc/sysconfig/iptables
+
+# Step 8: Allow a specific IP to access all services
+iptables -A INPUT -s <allowed_ip> -j ACCEPT
+iptables -A OUTPUT -d <allowed_ip> -j ACCEPT
+
+# Step 9: List rules with line numbers for verification
+iptables -L -v --line-numbers
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Cryptographic Services</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+# Step 1: Login as root
+su -
+
+# Step 2: Install required RPM packages
+yum install -y crypto-utils mod_ssl
+
+# Step 3: Generate keys for your server (valid for 365 days)
+genkey --days 365 yourserver.example.com
+# → Follow interactive prompts:
+# - Select recommended key size
+# - Wait for system to generate random bits for key
+# - When asked about CSR (Certificate Signing Request), select No
+# - Enter a strong passphrase for the private key (press spacebar for * masking)
+# - Enter server identification details as prompted
+
+# Step 4: Keys and certificate are now generated and saved in appropriate directories
+# Locations will be displayed by genkey command output
+
+# Step 5: Verify and open the certificate
+# Example (replace with actual path shown in genkey output):
+cat /etc/pki/tls/certs/yourserver.example.com.crt
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">1.Write a shell script to show various system configurations </div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+if [ $# -ne 0 ]
+then
+echo "Please do not use arguments"
+exit
+fi
+echo "Currently logged user and his login name is `who am i`"
+echo "Your current shell is $SHELL"
+echo "Your home directory is $HOME"
+echo "Your operating system type is $OSTYPE"
+echo "Your current path is $PATH"
+echo "Your current working directory is $PWD"
+echo "Current login users is `who |wc -l`"
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">2.	Write a shell script to find lowest of two numbers.</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+echo Enter two numbers:
+read n1 n2
+if [ $n1 -lt $n2 ]
+then
+        echo "First number is lowest."
+else
+        echo "second number is lowest."
+fi
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">4.	Write a shell script to check if the number is even or odd.</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+echo "Enter a number:"
+read n
+if [ $(($n % 2)) -eq 0 ]
+then
+        echo "The number is even."
+else
+        echo "The number is odd."
+fi
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">3.	Write a shell script to find factorial of a number.</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+#!/bin/bash
+fact=1
+echo -e "Enter a number:"
+read n
+if [ $n -gt 0 ] ; then
+for ((i=$n;i>=1;i--))
+do
+        fact=`expr $fact \* $i`
+done
+fi
+echo "Factorial of $n is $fact."
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">5.	Write a shell script to check whether number is armstrong.</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+echo "Enter the number:"
+read c
+x=$c
+sum=0
+r=0
+n=0
+while [ $x -gt 0 ]
+do
+        r=`expr $x % 10`
+        n=`expr $r \* $r \* $r`
+        sum=`expr $sum + $n`
+        x=`expr $x / 10`
+done
+if [ $sum -eq $c ]
+then
+        echo "Number is armstrong."
+else
+        echo "Number is not armstrong."
+fi
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Shell script to automate or monitor tasks/process</div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+#!/bin/bash
+COUNTER=0
+while ps aux | grep httpd | grep -v grep > /dev/null
+do
+COUNTER=`expr $COUNTER + 1`
+sleep 1
+echo "httpd is running since $COUNTER seconds"
+done
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+      <div class="qa-card">
+        <div class="question">Perform daily system administration task </div>
+        <div class="answer-section">
+          <div class="answer-label">Answer</div>
+          <div class="answer-box">
+            <pre>
+                Manage Jobs in Background/Foreground
+# Step 1: Start graphical program from terminal
+system-config-users
+
+# Step 2: Suspend the job (Ctrl+Z)
+# Step 3: Move job to background
+bg
+
+# Step 4: Check jobs in the terminal
+jobs
+# Output example: [1]+  Running system-config-users &
+
+# Step 5: Bring job back to foreground
+fg
+# or specify job number
+fg %1
+
+
+Managing Processes with ps & kill
+# Step 1: Open terminal and start subshell
+bash
+
+# Step 2: Start ssh as a subshell
+ssh -X localhost
+# Enter password and confirm known hosts
+
+# Step 3: Start gedit as a background job
+gedit &
+
+# Step 4: List all processes with parent-child relationship
+ps afx
+
+# Step 5: Find SSH PID (if needed)
+ps aux | grep ssh
+
+# Step 6: Kill SSH process
+kill <SSH_PID>
+# Killing parent (SSH) will also kill child process (gedit)
+
+Mounting a USB Flash Drive
+# Step 1: Ensure root privileges
+su -
+
+# Step 2: Insert USB flash drive
+# Step 3: Find device name
+dmesg | tail
+
+# Step 4: Check partitions
+fdisk -cul /dev/sdb
+
+# Step 5: Mount the USB
+mount /dev/sdb1 /mnt
+
+# Step 6: Go into mounted directory
+cd /mnt
+
+# Step 7: Verify contents
+ls
+
+# Step 8: Attempt to unmount (will fail if in /mnt)
+umount /dev/sdb1
+
+# Step 9: Exit directory
+cd
+
+# Step 10: Unmount successfully
+umount /dev/sdb1
+
+Creating Links
+# Step 1: Ensure root permissions
+su -
+
+# Step 2: Create symbolic link
+ln -s /etc/hosts ~/symhosts
+
+# Step 3: Create hard link
+ln /etc/hosts ~/hardhosts
+
+# Step 4: Add entry to /etc/hosts
+echo "10.0.0.10 dummyhost" >> /etc/hosts
+
+# Step 5: Verify addition in all files
+cat /etc/hosts ~/symhosts ~/hardhosts
+
+# Step 6: Show inode numbers
+ls -il /etc/hosts ~/symhosts ~/hardhosts
+# Hard link shares inode with original file
+# Symbolic link has different inode
+
+# Step 7: Remove /etc/hosts
+rm /etc/hosts
+# ~/symhosts now broken, ~/hardhosts still accessible
+
+# Step 8: Restore /etc/hosts from hard link
+ln ~/hardhosts /etc/hosts
+
+
+            </pre>
+          </div>
+          <button class="copy-btn">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="notification" id="notification">✓ Copied to clipboard!</div>
+
+    <script>
+      const copyBtns = document.querySelectorAll(".copy-btn");
+      const notification = document.getElementById("notification");
+
+      copyBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const answerBox = this.previousElementSibling;
+          const text = answerBox.textContent.trim();
+
+          navigator.clipboard
+            .writeText(text)
+            .then(() => {
+              this.textContent = "Copied!";
+              this.classList.add("copied");
+
+              notification.classList.add("show");
+
+              setTimeout(() => {
+                this.textContent = "Copy";
+                this.classList.remove("copied");
+                notification.classList.remove("show");
+              }, 2000);
+            })
+            .catch((err) => {
+              console.error("Failed to copy: ", err);
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
